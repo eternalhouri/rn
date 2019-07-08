@@ -8,19 +8,19 @@ import React, { Component } from 'react';
 import LoginComponent from './app/components/login'
 import MainComponent from './app/components/main'
 import ProductListComponent from './app/components/productList'
-import {createStackNavigator} from 'react-navigation'
+import { createStackNavigator } from 'react-navigation'
 
-var myNavigator=createStackNavigator({
-  login:{
-    screen:LoginComponent
+var myNavigator = createStackNavigator({
+  login: {
+    screen: LoginComponent
   },
-  main:{
-    screen:MainComponent
+  main: {
+    screen: MainComponent
   },
-  productList:{
-    screen:ProductListComponent
+  productList: {
+    screen: ProductListComponent
   }
-}) 
+})
 
 import {
   AppRegistry,
