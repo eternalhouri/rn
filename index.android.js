@@ -12,19 +12,19 @@ import DetailComponent from './app/components/details'
 import { createStackNavigator } from 'react-navigation'
 
 var myNavigator = createStackNavigator({
+  login: {
+    screen: LoginComponent
+  },
   main: {
     screen: MainComponent,
     navigationOptions:()=>{
       return {
         headerTitle:"管理页面",
         headerTitleStyle:{
-         marginLeft: 210,
+         marginLeft: 150,
         }
       }
     }
-  },
-  login: {
-    screen: LoginComponent
   },
   productList: {
     screen: ProductListComponent,
@@ -39,7 +39,16 @@ var myNavigator = createStackNavigator({
     }
   },
   detail:{
-    screen:DetailComponent
+    screen:DetailComponent,
+    navigationOptions:()=>{
+      return {
+        headerTitle:"商品详情",
+        headerTitleStyle:{
+          color:'red',
+          marginLeft: 150,
+        }
+      }
+    }
   }
 })
 
