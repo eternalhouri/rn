@@ -1,11 +1,11 @@
 import React,{Component} from 'react'
-import {View,Text,Image,TouchableOpacity,StyleSheet} from 'react-native'
+import {View,Text,Image,ScrollView,TouchableOpacity,StyleSheet} from 'react-native'
 export default class LoginComponent extends Component{
   handleProduct=()=>{
     this.props.navigation.push('productList')
   }
   render(){  
-    return <View style={myStyles.myColor}>
+    return <ScrollView style={myStyles.myColor}>
       {/* 第一行 */}
       <View style={myStyles.myFlex}>
         {/* 第一行第一列 */}
@@ -33,29 +33,28 @@ export default class LoginComponent extends Component{
         </View>
       </View>
       {/* 第三行 */}
-      <View>
-        <View style={myStyles.myFlex}>
-          <TouchableOpacity style={[myStyles.yFlex,myStyles.mySmall]}>
-            <Image source={require('../../assets/img/order.png')}></Image>
-            <Text>订单管理</Text>                      
-          </TouchableOpacity>
-          <TouchableOpacity style={[myStyles.yFlex,myStyles.mySmall]}>
-            <Image source={require('../../assets/img/user.png')}></Image>
-            <Text>用户管理</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={myStyles.myFlex}>
-          <TouchableOpacity style={[myStyles.yFlex,myStyles.mySmall]} onPress={this.handleProduct}> 
-            <Image source={require('../../assets/img/product.png')}></Image>
-            <Text>商品管理</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[myStyles.yFlex,myStyles.mySmall]}>
-            <Image source={require('../../assets/img/setting.png')}></Image>
-            <Text>设置</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={myStyles.myFlex}>
+        <TouchableOpacity style={[myStyles.yFlex,myStyles.mySmall]}>
+          <Image source={require('../../assets/img/order.png')}></Image>
+          <Text>订单管理</Text>                      
+        </TouchableOpacity>
+        <TouchableOpacity style={[myStyles.yFlex,myStyles.mySmall]}>
+          <Image source={require('../../assets/img/user.png')}></Image>
+          <Text>用户管理</Text>
+        </TouchableOpacity>
       </View>
-    </View>
+      {/* 第四行 */}
+      <View style={myStyles.myFlex}>
+        <TouchableOpacity style={[myStyles.yFlex,myStyles.mySmall]} onPress={this.handleProduct}> 
+          <Image source={require('../../assets/img/product.png')}></Image>
+          <Text>商品管理</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[myStyles.yFlex,myStyles.mySmall]}>
+          <Image source={require('../../assets/img/setting.png')}></Image>
+          <Text>设置</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   }
 }
 
@@ -70,5 +69,5 @@ const myStyles=StyleSheet.create({
   text:{fontSize:16},
   tAlian:{textAlign:'center'},
   myBig:{width:239,height:150},
-  mySmall:{width:240,height:200}
+  mySmall:{width:240,height:240}
 })

@@ -8,17 +8,38 @@ import React, { Component } from 'react';
 import LoginComponent from './app/components/login'
 import MainComponent from './app/components/main'
 import ProductListComponent from './app/components/productList'
+import DetailComponent from './app/components/details'
 import { createStackNavigator } from 'react-navigation'
 
 var myNavigator = createStackNavigator({
   main: {
-    screen: MainComponent
+    screen: MainComponent,
+    navigationOptions:()=>{
+      return {
+        headerTitle:"管理页面",
+        headerTitleStyle:{
+         marginLeft: 210,
+        }
+      }
+    }
   },
   login: {
     screen: LoginComponent
   },
   productList: {
-    screen: ProductListComponent
+    screen: ProductListComponent,
+    navigationOptions:()=>{
+      return {
+        headerTitle:"商品列表",
+        headerTitleStyle:{
+          color:'red',
+          marginLeft: 150,
+        }
+      }
+    }
+  },
+  detail:{
+    screen:DetailComponent
   }
 })
 
